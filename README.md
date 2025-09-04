@@ -1,5 +1,51 @@
-# Vue 3 + TypeScript + Vite
+# Orderbook Visualization
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A real-time orderbook visualization tool built with Vue 3, TypeScript, and SignalR. This application displays bid and ask orders in a dynamic chart format.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Features
+
+- Real-time orderbook updates via SignalR connection
+- Visual representation of bids and asks using Chart.js
+- Split view with asks on the left and bids on the right
+- Price-based ordering with highest prices in the middle
+- Bidding form interface
+- Horizontal scrolling for large datasets
+
+## Tech Stack
+
+- Vue 3
+- TypeScript
+- Vite
+- Chart.js
+- SignalR
+- CSS3
+
+## Getting Started
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd orderbook
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+4. Make sure the SignalR backend server is running at `http://localhost:5112`
+
+## Project Structure
+
+- `src/components/OrderBook.vue` - Main orderbook component with chart visualization
+- `src/types/` - TypeScript type definitions
+- `src/utils/` - Utility functions including throttle implementation
+
+## Configuration
+
+The SignalR connection is configured to connect to `http://localhost:5112/orderBookHub`. Update this URL in `OrderBook.vue` if your backend is running on a different address.
